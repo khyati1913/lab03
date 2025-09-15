@@ -1,0 +1,35 @@
+#include <stdio.h>
+int isLeap(int y) {
+    if ( (y % 400) == 0 )
+        return 1;
+    if ( (y % 100) == 0 )
+        return 0;
+    if ( (y % 4) == 0 )
+        return 1;
+    return 0;
+}
+int main() {
+    long total_days = 0;
+    int y;
+    int target_year = 2026;
+    for (y = 1; y < target_year; y++) {
+        if (isLeap(y))
+            total_days += 366;
+        else
+            total_days += 365;
+    }
+    int rem = total_days % 7;
+    char *day_names[7];
+    day_names[0] = "Monday";
+    day_names[1] = "Tuesday";
+    day_names[2] = "Wednesday";
+    day_names[3] = "Thursday";
+    day_names[4] = "Friday";
+    day_names[5] = "Saturday";
+    day_names[6] = "Sunday";
+
+    printf("1/1/%d is a %s\n", target_year, day_names[rem]);
+
+    return 0;
+}
+
