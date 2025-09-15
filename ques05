@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int l1, b1, l2, b2, l3, b3;
+    int per1, per2, per3;
+    int maxPer;  // to hold the maximum perimeter
+    printf("Enter length and breadth of rectangle 1: ");
+    scanf("%d %d", &l1, &b1);
+    printf("Enter length and breadth of rectangle 2: ");
+    scanf("%d %d", &l2, &b2);
+    printf("Enter length and breadth of rectangle 3: ");
+    scanf("%d %d", &l3, &b3);
+    per1 = 2 * (l1 + b1);
+    per2 = 2 * (l2 + b2);
+    per3 = 2 * (l3 + b3);
+    maxPer = (per1 > per2 ? per1 : per2);
+    maxPer = (maxPer > per3 ? maxPer : per3);
+    printf("Perimeter of rectangle 1 = %d\n", per1);
+    printf("Perimeter of rectangle 2 = %d\n", per2);
+    printf("Perimeter of rectangle 3 = %d\n", per3);
+    printf("The rectangle with highest perimeter has perimeter = %d\n", maxPer);
+    return 0;
+}
